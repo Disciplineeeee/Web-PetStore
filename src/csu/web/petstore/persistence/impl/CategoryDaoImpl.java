@@ -22,10 +22,11 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public List<Category> getCategoryList() {
-        List<Category> categoryList=new ArrayList<>();
+        List<Category> categoryList=new ArrayList<Category>();
         try{
             Connection connection= DBUtil.getConnection();
             Statement statement=connection.createStatement();
+
             ResultSet resultSet=statement.executeQuery(GET_CATEGORY_LIST);
             while(resultSet.next()){
                 Category category=new Category();
@@ -50,6 +51,7 @@ public class CategoryDaoImpl implements CategoryDao {
         try{
             Connection connection= DBUtil.getConnection();
             PreparedStatement preparedStatement=connection.prepareStatement(GET_CATEGORY);
+            preparedStatement.setString(1,categoryId);
             ResultSet resultSet=preparedStatement.executeQuery();
             if(resultSet.next()){
                 category=new Category();
