@@ -20,7 +20,7 @@
     <c:forEach var="item" items="${sessionScope.itemList}">
       <tr>
         <td>
-        <a href="">${item.itemId}</a>
+        <a href="itemForm?itemId=${item.itemId}">${item.itemId}</a>
         </td>
         <td>${item.product.productId}</td>
         <td>${item.attribute1} ${item.attribute2} ${item.attribute3}
@@ -28,7 +28,7 @@
         <td><fmt:formatNumber value="${item.listPrice}"
                               pattern="$#,##0.00" /></td>
         <td>
-        <a href="" class="Button">Add to Cart</a>
+        <a href="addItemToCart?workingItemId=${item.itemId}" class="Button">Add to Cart</a>
         </td>
       </tr>
     </c:forEach>

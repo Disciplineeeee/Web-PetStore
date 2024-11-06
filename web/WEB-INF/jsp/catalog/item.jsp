@@ -1,47 +1,52 @@
 <%@ include file="../common/top.jsp"%>
-<div id="Welcome">
-    <div id="WelcomeContent">
-        <!-- 显示登录用户的firstName -->
-    </div>
+
+<div id="BackLink">
+    <a href="productForm?productId=${sessionScope.product.productId}">
+        Return to ${sessionScope.product.productId}
+    </a>
 </div>
 
-<div id="Main">
-    <div id="Sidebar">
-        <div id="SidebarContent">
-            <a href="categoryForm?categoryId=FISH"><img src="images/fish_icon.gif" /></a><br />
-            Saltwater, Freshwater <br />
-            <a href="categoryForm?categoryId=DOGS"><img src="images/dogs_icon.gif" /></a><br />
-            Various Breeds <br />
-            <a href="categoryForm?categoryId=CATS"><img src="images/cats_icon.gif" /></a><br />
-            Various Breeds, Exotic Varieties <br />
-            <a href="categoryForm?categoryId=REPTILES"><img src="images/reptiles_icon.gif" /></a><br />
-            Lizards, Turtles, Snakes <br />
-            <a href="categoryForm?categoryId=BIRDS"><img src="images/birds_icon.gif" /></a><br />
-            Exotic Varieties
-        </div>
-    </div>
+<div id="Catalog">
 
-    <div id="MainImage">
-        <div id="MainImageContent">
-            <map name="estoremap">
-                <area alt="Birds" coords="72,2,280,250"
-                      href="categoryForm?categoryId=BIRDS" shape="RECT" />
-                <area alt="Fish" coords="2,180,72,250"
-                      href="categoryForm?categoryId=FISH" shape="RECT" />
-                <area alt="Dogs" coords="60,250,130,320"
-                      href="categoryForm?categoryId=DOGS" shape="RECT" />
-                <area alt="Reptiles" coords="140,270,210,340"
-                      href="categoryForm?categoryId=REPTILES" shape="RECT" />
-                <area alt="Cats" coords="225,240,295,310"
-                      href="categoryForm?categoryId=CATS" shape="RECT" />
-                <area alt="Birds" coords="280,180,350,250"
-                      href="categoryForm?categoryId=BIRDS" shape="RECT" />
-            </map>
-            <img height="355" src="images/splash.gif" align="middle"
-                 usemap="#estoremap" width="350" /></div>
-    </div>
+    <table>
+        <tr>
+            <td>${sessionScope.product.description}</td>
+        </tr>
+        <tr>
+            <td><b> ${sessionScope.item.itemId} </b></td>
+        </tr>
+        <tr>
+            <td><b><font size="4">
+                ${sessionScope.item.attribute1}
+                ${sessionScope.item.attribute2} ${sessionScope.item.attribute3}
+                ${sessionScope.item.attribute4} ${sessionScope.item.attribute5}
+                ${sessionScope.product.name}
+            </font></b></td>
+        </tr>
+        <tr>
+            <td>${sessionScope.product.name}</td>
+        </tr>
+        <tr>
+            <td>
+                <c:if test="${sessionScope.item.quantity <= 0}">
+                    Back ordered.
+                </c:if>
+                <c:if test="${sessionScope.item.quantity > 0}">
+                    ${sessionScope.item.quantity} in stock.
+                </c:if>
+            </td>
+        </tr>
+        <tr>
+            <td><fmt:formatNumber value="${sessionScope.item.listPrice}" pattern="$#,##0.00" /></td>
+        </tr>
 
-    <div id="Separator">&nbsp;</div>
+        <tr>
+            <td>
+                <a href="addItemToCart?workingItemId=${sessionScope.item.itemId}" class="Button">Add to Cart</a>
+            </td>
+        </tr>
+    </table>
+
 </div>
 
 <%@ include file="../common/bottom.jsp"%>

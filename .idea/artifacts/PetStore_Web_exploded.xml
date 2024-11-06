@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="PetStore" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="servlet-api" />
+          <element id="library" level="project" name="jsp-api" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="mysql-connector-j-9.1.0" />
+        </element>
       </element>
     </root>
   </artifact>
