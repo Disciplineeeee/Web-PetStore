@@ -59,6 +59,16 @@
         <servlet-class>csu.web.petstore.web.servlet.SignOnServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>NewAccountServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.NewAccountServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>NewAccountFormServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.NewAccountFormServlet</servlet-class>
+    </servlet>
+
 
 
 
@@ -116,5 +126,15 @@
     <servlet-mapping>
         <servlet-name>SignOnServlet</servlet-name>
         <url-pattern>/signOn</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NewAccountServlet</servlet-name>
+        <url-pattern>/newAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>NewAccountFormServlet</servlet-name>
+        <url-pattern>/newAccountForm</url-pattern>
     </servlet-mapping>
 </web-app>
