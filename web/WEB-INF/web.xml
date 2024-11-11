@@ -69,6 +69,11 @@
         <servlet-class>csu.web.petstore.web.servlet.NewAccountFormServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>SignOutServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.SignOutServlet</servlet-class>
+    </servlet>
+
 
 
 
@@ -136,5 +141,10 @@
     <servlet-mapping>
         <servlet-name>NewAccountFormServlet</servlet-name>
         <url-pattern>/newAccountForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SignOutServlet</servlet-name>
+        <url-pattern>/signOut</url-pattern>
     </servlet-mapping>
 </web-app>

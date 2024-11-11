@@ -31,7 +31,7 @@
             </c:if>
 
             <c:if test="${sessionScope.loginAccount != null}">
-                <a href="#">Sign Out</a>
+                <a href="signOut">Sign Out</a>
                 <img align="middle" src="images/separator.gif" />
                 <a href="#"> My Account</a>
                 <img align="middle" src="images/separator.gif" />
@@ -46,6 +46,15 @@
                 <input type="text" name="keyword" size="14">
                 <input type="submit" value="Search">
             </form>
+<%--            <div id="productAutoComplete">--%>
+<%--                <ul id="productAutoList">--%>
+<%--                    <li class="productAutoItem">111111</li>--%>
+<%--                    <li class="productAutoItem">111111111</li>--%>
+<%--                    <li class="productAutoItem">111111111111</li>--%>
+<%--                    <li class="productAutoItem">111111111111</li>--%>
+<%--                    <li class="productAutoItem">111111111111</li>--%>
+<%--                </ul>--%>
+<%--            </div>--%>
         </div>
     </div>
 
