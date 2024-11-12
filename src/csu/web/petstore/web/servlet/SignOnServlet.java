@@ -27,6 +27,20 @@ public class SignOnServlet extends HttpServlet {
         this.username = req.getParameter("username");
         this.password = req.getParameter("password");
 
+
+
+//        String userCheckCode = req.getParameter("checkcode");
+//        String correctCode = (String) req.getSession().getAttribute("checkcode_session");
+//
+//        if (correctCode == null || !correctCode.equalsIgnoreCase(userCheckCode)) {
+//            req.setAttribute("signOnMsg", "验证码错误，请重新输入");
+//            req.getRequestDispatcher("/signon.jsp").forward(req, resp);
+//            return;
+//        }
+
+
+
+
         //校验用户输入的正确性
         if(!validate()){
             req.setAttribute("signOnMsg", this.msg);
@@ -41,6 +55,7 @@ public class SignOnServlet extends HttpServlet {
                 loginAccount.setPassword(null);
                 HttpSession session = req.getSession();
                 session.setAttribute("loginAccount" , loginAccount);
+
 
                 if(loginAccount.isListOption()){
                     CatalogService catalogService = new CatalogService();

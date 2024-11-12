@@ -74,6 +74,26 @@
         <servlet-class>csu.web.petstore.web.servlet.SignOutServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>UpdateAccountServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.UpdateAccountServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>EditAccountFormServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.EditAccountFormServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CheckCodeServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.CheckCodeServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.VerifyCodeServlet</servlet-class>
+    </servlet>
+
 
 
 
@@ -146,5 +166,25 @@
     <servlet-mapping>
         <servlet-name>SignOutServlet</servlet-name>
         <url-pattern>/signOut</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateAccountServlet</servlet-name>
+        <url-pattern>/updateAccount</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>EditAccountFormServlet</servlet-name>
+        <url-pattern>/editAccountForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CheckCodeServlet</servlet-name>
+        <url-pattern>/checkCode</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <url-pattern>/verifyCode</url-pattern>
     </servlet-mapping>
 </web-app>

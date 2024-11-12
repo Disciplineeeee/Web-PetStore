@@ -9,7 +9,7 @@
 
 <div class="cart-box">
     <c:if test="${sessionScope.loginAccount ==null}">
-        你还没有<a href="LoginForm">登录</a>.
+        你还没有<a href="signonForm">登录</a>.
     </c:if>
     <c:if test="${sessionScope.loginAccount !=null}">
         <h2>My Order</h2>
@@ -37,8 +37,6 @@
 
 
 </div>
-
-
 
 
 

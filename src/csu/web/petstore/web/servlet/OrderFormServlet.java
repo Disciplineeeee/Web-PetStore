@@ -15,7 +15,7 @@ import java.util.List;
 
 public class OrderFormServlet extends HttpServlet {
     private static final String ORDER_FORM = "/WEB-INF/jsp/cart/order.jsp";
-    private static final String LOGIN_FORM = "/WEB-INF/jsp/account/login.jsp";
+    private static final String LOGIN_FORM = "/WEB-INF/jsp/account/signon.jsp";
     OrderDao orderDao = new OrderDaoImpl();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
