@@ -89,11 +89,6 @@
         <servlet-class>csu.web.petstore.web.servlet.CheckCodeServlet</servlet-class>
     </servlet>
 
-    <servlet>
-        <servlet-name>VerifyCodeServlet</servlet-name>
-        <servlet-class>csu.web.petstore.web.servlet.VerifyCodeServlet</servlet-class>
-    </servlet>
-
 
 
 
@@ -183,8 +178,4 @@
         <url-pattern>/checkCode</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>VerifyCodeServlet</servlet-name>
-        <url-pattern>/verifyCode</url-pattern>
-    </servlet-mapping>
 </web-app>

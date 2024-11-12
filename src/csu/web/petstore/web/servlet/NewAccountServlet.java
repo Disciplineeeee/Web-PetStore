@@ -16,8 +16,12 @@ public class NewAccountServlet extends HttpServlet {
     private static final String SUCCESS_FORM="/WEB-INF/jsp/catalog/main.jsp";
     private String msg;
 
+    private String checkcode;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.checkcode = req.getParameter("checkcode");
+
         HttpSession session=req.getSession();
         session.setAttribute("userid",req.getParameter("userid"));
         session.setAttribute("password",req.getParameter("password"));
@@ -66,15 +70,23 @@ public class NewAccountServlet extends HttpServlet {
             req.setAttribute("RegisterMsg", this.msg);
             req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req, resp);
         }else{
+            HttpSession session1 = req.getSession();
+            String checkcode_session = (String) session1.getAttribute("checkcode_session");
+            session1.removeAttribute("checkcode_session");
 
-            accountDao.insertAccount(account);
-            accountDao.insertSignon(account);
+            if (checkcode_session != null && checkcode_session.equalsIgnoreCase(checkcode)) {//验证码正确
+                 accountDao.insertAccount(account);
+                 accountDao.insertSignon(account);
+                 accountDao.insertProfile(account);
+                 //accountDao.insertHistroyUserId(account);
 
-            accountDao.insertProfile(account);
-
-            //accountDao.insertHistroyUserId(account);
-
-            req.getRequestDispatcher(SUCCESS_FORM).forward(req, resp);
+                req.getRequestDispatcher(SUCCESS_FORM).forward(req, resp);
+            }
+            else { //验证码错误
+                this.msg = "验证码错误";
+                req.setAttribute("RegisterMsg", this.msg);
+                req.getRequestDispatcher(NEW_ACCOUNT_FORM).forward(req,resp);
+            }
         }
     }
 
@@ -139,6 +151,10 @@ public class NewAccountServlet extends HttpServlet {
         }
         if(account.getZip()==null||account.getZip().equals("")){
             this.msg="Zip is required";
+            return false;
+        }
+        if(this.checkcode == null || this.checkcode.equals("")){
+            this.msg = "验证码不能为空";
             return false;
         }
         return true;

@@ -1,5 +1,15 @@
 <%@ include file="../common/top.jsp"%>
 
+<script>
+  window.onload=function (){
+    document.getElementById("img").onclick=function (){
+      this.src="checkCode?time"+new Date().getTime();
+    }
+  }
+
+</script>
+
+
 <div id="Catalog">
   <form action="newAccount" method="post">
     <h3>User Information</h3>
@@ -23,6 +33,10 @@
     </table>
 
     <%@ include file="includeAccountFields.jsp"%>
+
+    <p>Checkcode:<input name="checkcode" type="text" value="" /></p>
+    <p><img id="img" src="checkCode" alt=""></p>
+
     <input type="submit" value="Save Account Information">
 </div>
 
