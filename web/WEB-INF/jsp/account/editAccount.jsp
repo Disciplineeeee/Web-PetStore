@@ -107,5 +107,6 @@
         <input type="submit" name="editAccount" value="Save Account Information" />
 
     </form>
+    <br>
     <a href="viewOrderList">My Orders</a></div>
 <%@ include file="../common/bottom.jsp"%>
