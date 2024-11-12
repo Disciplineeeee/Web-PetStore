@@ -20,6 +20,8 @@ public class SignOnServlet extends HttpServlet {
     private String username;
     private String password;
 
+    private String checkcode;
+
     private String msg;
 
     @Override
@@ -27,29 +29,24 @@ public class SignOnServlet extends HttpServlet {
         this.username = req.getParameter("username");
         this.password = req.getParameter("password");
 
-
-
-//        String userCheckCode = req.getParameter("checkcode");
-//        String correctCode = (String) req.getSession().getAttribute("checkcode_session");
-//
-//        if (correctCode == null || !correctCode.equalsIgnoreCase(userCheckCode)) {
-//            req.setAttribute("signOnMsg", "验证码错误，请重新输入");
-//            req.getRequestDispatcher("/signon.jsp").forward(req, resp);
-//            return;
-//        }
-
-
-
+        this.checkcode = req.getParameter("checkcode");
 
         //校验用户输入的正确性
         if(!validate()){
             req.setAttribute("signOnMsg", this.msg);
             req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
         }else{
+            HttpSession session1 = req.getSession();
+            String checkcode_session = (String) session1.getAttribute("checkcode_session");
+            session1.removeAttribute("checkcode_session");
+
+            if (checkcode_session != null && checkcode_session.equalsIgnoreCase(checkcode)) {//验证码正确
+
             AccountService accountService = new AccountService();
             Account loginAccount = accountService.getAccount(username, password);
             if(loginAccount == null){
                 this.msg = "用户名或密码错误";
+                req.setAttribute("signOnMsg", this.msg);
                 req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
             }else {
                 loginAccount.setPassword(null);
@@ -65,10 +62,16 @@ public class SignOnServlet extends HttpServlet {
 
                 resp.sendRedirect("mainForm");
             }
+            }
+            else { //验证码错误
+                this.msg = "验证码错误";
+                req.setAttribute("signOnMsg", this.msg);
+                req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
+            }
         }
     }
 
-    private boolean validate(){
+    private boolean validate(){ //输入是否为空
         if(this.username == null || this.username.equals("")){
             this.msg = "用户名不能为空";
             return false;
@@ -77,7 +80,10 @@ public class SignOnServlet extends HttpServlet {
             this.msg = "密码不能为空";
             return false;
         }
+        if(this.checkcode == null || this.checkcode.equals("")){
+            this.msg = "验证码不能为空";
+            return false;
+        }
         return true;
     }
-
 }
