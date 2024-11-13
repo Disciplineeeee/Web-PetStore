@@ -1,5 +1,10 @@
 <%@ include file="../common/top.jsp"%>
 
+<div id="BackLink">
+    <a href="mainForm">Return to Main Menu</a>
+</div>
+
+
 <div id="Catalog">
     <form action="updateAccount" method="post">
 
@@ -103,10 +108,10 @@
 
         </table>
 
-
+        <br>
         <input type="submit" name="editAccount" value="Save Account Information" />
 
     </form>
     <br>
-    <a href="viewOrderList">My Orders</a></div>
+    <a href="listOrder">My Orders</a></div>
 <%@ include file="../common/bottom.jsp"%>

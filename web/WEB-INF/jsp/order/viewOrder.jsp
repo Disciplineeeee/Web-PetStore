@@ -1,19 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hidyouths
-  Date: 2024/11/12
-  Time: 20:25
-  To change this template use File | Settings | File Templates.
---%>
 <%@ include file="../common/top.jsp"%>
 
 <div id="Content">
-    <ul class="messages">
-        <li>${sessionScope.message}</li>
-    </ul>
 
     <div id="BackLink">
-        <a href="main">Return to Main Menu</a>
+        <a href="mainForm">Return to Main Menu</a>
     </div>
 
     <div id="Catalog">
@@ -130,7 +120,7 @@
                         <c:forEach var="lineItem" items="${sessionScope.order.lineItems}">
                             <tr>
                                 <td>
-                                    <a href="viewItem?itemId=${lineItem.item.itemId}">${lineItem.item.itemId}</a>
+                                    <a href="itemForm?itemId=${lineItem.item.itemId}">${lineItem.item.itemId}</a>
                                 </td>
                                 <td><c:if test="${lineItem.item != null}">
                                     ${lineItem.item.attribute1}

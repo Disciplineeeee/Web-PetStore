@@ -44,6 +44,7 @@
         <servlet-class>csu.web.petstore.web.servlet.CartFormServlet</servlet-class>
     </servlet>
 
+
     <servlet>
         <servlet-name>SignOnFormServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.SignOnFormServlet</servlet-class>
@@ -52,6 +53,11 @@
     <servlet>
         <servlet-name>NewOrderFormServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.NewOrderFormServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>NewOrderServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.NewOrderServlet</servlet-class>
     </servlet>
 
     <servlet>
@@ -87,6 +93,31 @@
     <servlet>
         <servlet-name>CheckCodeServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.CheckCodeServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ViewOrderServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.ViewOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ShippingFormServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.ShippingFormServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ConfirmOrderServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.ConfirmOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ListOrderServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.ListOrderServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SearchProductServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.SearchProductServlet</servlet-class>
     </servlet>
 
 
@@ -144,6 +175,11 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>NewOrderServlet</servlet-name>
+        <url-pattern>/newOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>SignOnServlet</servlet-name>
         <url-pattern>/signOn</url-pattern>
     </servlet-mapping>
@@ -178,4 +214,28 @@
         <url-pattern>/checkCode</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>ViewOrderServlet</servlet-name>
+        <url-pattern>/viewOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ShippingFormServlet</servlet-name>
+        <url-pattern>/shippingForm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ConfirmOrderServlet</servlet-name>
+        <url-pattern>/confirmOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ListOrderServlet</servlet-name>
+        <url-pattern>/listOrder</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SearchProductServlet</servlet-name>
+        <url-pattern>/searchProduct</url-pattern>
+    </servlet-mapping>
 </web-app>

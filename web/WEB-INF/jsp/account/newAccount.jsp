@@ -10,6 +10,10 @@
 </script>
 
 
+<div id="BackLink">
+  <a href="mainForm">Return to Main Menu</a>
+</div>
+
 <div id="Catalog">
   <form action="newAccount" method="post">
     <h3>User Information</h3>
@@ -34,8 +38,17 @@
 
     <%@ include file="includeAccountFields.jsp"%>
 
-    <p>Checkcode:<input name="checkcode" type="text" value="" /></p>
-    <p><img id="img" src="checkCode" alt=""></p>
+    <br>
+    <table>
+        <td>Verification code:</td>
+        <td>
+          <input type="text" name="checkcode" style="width: 60px" value="" >
+          <img id="img" style="width: 88px;height: 22px;position: absolute;+margin-top:1px;margin-left: 5px" src="checkCode">
+        </td>
+      </tr>
+    </table>
+
+    <br>
 
     <input type="submit" value="Save Account Information">
 </div>

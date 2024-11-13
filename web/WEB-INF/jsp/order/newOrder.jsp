@@ -1,7 +1,7 @@
 <%@ include file="../common/top.jsp"%>
 
 <div id="Catalog">
-  <form action="conFirmOrderForm" method="post">
+  <form action="newOrder" method="post">
     <table>
       <tr>
         <th colspan=2>Payment Details</th>
@@ -9,7 +9,7 @@
       <tr>
         <td>Card Type:</td>
         <td>
-          <select>
+          <select name="cardType">
             <option value="Visa" selected="selected">Visa</option>
             <option value="MasterCard">MasterCard</option>
             <option value="American Express">American Express</option>

@@ -45,7 +45,7 @@ public class UpdateAccountServlet extends HttpServlet {
             account.setBannerOption(Boolean.parseBoolean(req.getParameter("account.bannerOption")));
             AccountService accountService = new AccountService();
             accountService.updateAccount(account);
-            session.setAttribute("account",account);
+            session.setAttribute("loginAccount",account);
             if (account!=null){
                 String viewpage="changeAccountForm";
                 UserLogService userLogService=new UserLogService();

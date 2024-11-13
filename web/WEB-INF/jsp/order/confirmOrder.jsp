@@ -1,25 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hidyouths
-  Date: 2024/11/12
-  Time: 20:22
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ include file="../common/top.jsp"%>
 
 <div id="BackLink">
-  <a href="main">Return to Main Menu</a>
+  <a href="mainForm">Return to MainMenu</a>
 </div>
 
-<div id="Catalog">Please confirm the information below and then press continue...
-
+<div id="Catalog">
+  Please confirm the information below and then press continue...
   <table>
     <tr>
       <th align="center" colspan="2"><font size="4"><b>Order</b></font>
         <br />
-        <font size="3"><b>
-          <fmt:formatDate value="${sessionScope.order.orderDate}" pattern="yyyy/MM/dd hh:mm:ss" />
-        </b></font>
+        <font size="3"><b> <fmt:formatDate value="${sessionScope.order.orderDate}" pattern="yyyy/MM/dd HH:mm:ss" /></b></font>
       </th>
     </tr>
 
@@ -95,7 +87,9 @@
     </tr>
 
   </table>
-  <a class="Button" href="viewOrder">Confirm</a>
+
+  <a href="confirmOrder" class="Button">Confirm</a>
+
 </div>
 
 <%@ include file="../common/bottom.jsp"%>

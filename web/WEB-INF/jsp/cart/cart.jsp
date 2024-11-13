@@ -1,4 +1,3 @@
-
 <%@ include file="../common/top.jsp"%>
 
 <div id="BackLink">
@@ -63,6 +62,7 @@
       </table>
     </form>
 
+    <br>
     <c:if test="${sessionScope.cart.numberOfItems > 0}">
       <a href="newOrderForm" class="Button">Proceed to Checkout</a>
     </c:if>

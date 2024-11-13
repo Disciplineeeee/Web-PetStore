@@ -1,9 +1,13 @@
 package csu.web.petstore.web.servlet;
 
 import csu.web.petstore.domain.Account;
+import csu.web.petstore.domain.Cart;
+import csu.web.petstore.domain.CartItem;
 import csu.web.petstore.domain.Product;
 import csu.web.petstore.service.AccountService;
+import csu.web.petstore.service.CartService;
 import csu.web.petstore.service.CatalogService;
+import csu.web.petstore.service.UserLogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +25,9 @@ public class SignOnServlet extends HttpServlet {
     private String password;
 
     private String checkcode;
+
+    private Cart cart;
+    private List<CartItem> cartItemList;
 
     private String msg;
 
@@ -42,26 +49,46 @@ public class SignOnServlet extends HttpServlet {
 
             if (checkcode_session != null && checkcode_session.equalsIgnoreCase(checkcode)) {//验证码正确
 
-            AccountService accountService = new AccountService();
-            Account loginAccount = accountService.getAccount(username, password);
-            if(loginAccount == null){
-                this.msg = "用户名或密码错误";
-                req.setAttribute("signOnMsg", this.msg);
-                req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
-            }else {
-                loginAccount.setPassword(null);
-                HttpSession session = req.getSession();
-                session.setAttribute("loginAccount" , loginAccount);
-
-
-                if(loginAccount.isListOption()){
-                    CatalogService catalogService = new CatalogService();
-                    List<Product> myList = catalogService.getProductListByCategory(loginAccount.getFavouriteCategoryId());
-                    session.setAttribute("myList", myList);
+                AccountService accountService = new AccountService();
+                Account loginAccount = accountService.getAccount(username, password);
+                if(loginAccount == null){
+                    this.msg = "用户名或密码错误";
+                    req.setAttribute("signOnMsg", this.msg);
+                    req.getRequestDispatcher(SIGN_ON_FORM).forward(req,resp);
                 }
+                else {
+                    loginAccount.setPassword(null);
+                    HttpSession session = req.getSession();
+                    session.setAttribute("loginAccount" , loginAccount);
 
-                resp.sendRedirect("mainForm");
-            }
+                    UserLogService userLogService =new UserLogService();
+                    String viewpage="login";
+                    userLogService.insertUserLog(loginAccount,viewpage);
+
+
+                    //根据账号更新购物车
+                    CartService cartService=new CartService();
+                    cartItemList=cartService.getCartItems(loginAccount);
+                    cart=new Cart();
+                    CatalogService catalogService = new CatalogService();
+
+                    if (cartItemList!=null){
+                        for (CartItem cartItem:cartItemList) {
+                            boolean isInstock = catalogService.isItemInStock(cartItem.getItem().getItemId());
+                            cart.addItemFromSQL(cartItem,isInstock);
+                        }
+
+                    }
+                    session.setAttribute("cart",cart);
+
+                    if(loginAccount.isListOption()){
+                        //CatalogService catalogService = new CatalogService();
+                        List<Product> myList = catalogService.getProductListByCategory(loginAccount.getFavouriteCategoryId());
+                        session.setAttribute("myList", myList);
+                    }
+
+                    resp.sendRedirect("mainForm");
+                }
             }
             else { //验证码错误
                 this.msg = "验证码错误";
