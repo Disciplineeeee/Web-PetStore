@@ -120,6 +120,11 @@
         <servlet-class>csu.web.petstore.web.servlet.SearchProductServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ProductAutoCompleteServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.ProductAutoCompleteServlet</servlet-class>
+    </servlet>
+
 
 
 
@@ -237,5 +242,10 @@
     <servlet-mapping>
         <servlet-name>SearchProductServlet</servlet-name>
         <url-pattern>/searchProduct</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ProductAutoCompleteServlet</servlet-name>
+        <url-pattern>/productAuto</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -12,6 +12,12 @@
           <element id="library" level="project" name="jsp-api" />
           <element id="library" level="project" name="jstl" />
           <element id="library" level="project" name="mysql-connector-j-9.1.0" />
+          <element id="library" level="project" name="fastjson-2.0.53" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="archive" name="jquery.jar">
+            <element id="library" level="application" name="jquery" />
+          </element>
+          <element id="library" level="project" name="fastjson-1.2.83(1)" />
         </element>
       </element>
     </root>
