@@ -105,7 +105,14 @@ a.Button:hover {
     color: #000;
     background-color: #54c07a;
 }
-
+#image-info {
+    position: absolute;
+    background-color:white;
+    border: 1px solid gray;
+    padding: 10px;
+    z-index: 1;
+    left:65%;
+}
 #Logo {
     width: 33%;
     height: 9ex;
@@ -280,6 +287,12 @@ body>#Banner {
     padding: 1ex;
     background:inherit;
     text-align:center;
+}
+#Catalog1 {
+    padding: 1ex;
+    background:inherit;
+    text-align:center;
+    height: 600px;
 }
 
 #Catalog input[type="submit"]{

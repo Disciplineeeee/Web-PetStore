@@ -6,7 +6,7 @@
         <a href="mainForm">Return to Main Menu</a>
     </div>
 
-    <div id="Catalog">
+    <div id="Catalog" class="div3">
 
         <table>
             <tr>

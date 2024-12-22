@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    
+
     <servlet>
         <servlet-name>MainFormServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.MainFormServlet</servlet-class>
@@ -124,11 +124,20 @@
         <servlet-name>ProductAutoCompleteServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.ProductAutoCompleteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateCartQuantitiesServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.UpdateCartQuantitiesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AutoMainTapServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.AutoMainTapServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewOrderPageServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.NewOrderPageServlet</servlet-class>
+    </servlet>
 
 
-
-
-    
     <servlet-mapping>
         <servlet-name>MainFormServlet</servlet-name>
         <url-pattern>/mainForm</url-pattern>
@@ -248,4 +257,17 @@
         <servlet-name>ProductAutoCompleteServlet</servlet-name>
         <url-pattern>/productAuto</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCartQuantitiesServlet</servlet-name>
+        <url-pattern>/updateCartQuantities</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutoMainTapServlet</servlet-name>
+        <url-pattern>/autoTap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewOrderPageServlet</servlet-name>
+        <url-pattern>/neworderpage</url-pattern>
+    </servlet-mapping>
+
 </web-app>

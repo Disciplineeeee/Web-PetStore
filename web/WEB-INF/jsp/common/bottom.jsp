@@ -18,7 +18,8 @@
     </div>
 
 </div>
-
+<script src="js/new-order.js"></script>
+<script src="js/auto-info.js"></script>
 <script src="js/productAuto.js"></script>
 </body>
 </html>

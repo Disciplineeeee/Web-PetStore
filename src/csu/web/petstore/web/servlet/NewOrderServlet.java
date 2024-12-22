@@ -20,13 +20,16 @@ import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.IOException;
 
 public class NewOrderServlet extends HttpServlet{
     private final String SHIPPINGFORM="/WEB-INF/jsp/order/shippingForm.jsp";
     private final String CONFIRMORDER="/WEB-INF/jsp/order/confirmOrder.jsp";
+    private final String NEWORDER="/WEB-INF/jsp/order/newOrder.jsp";
 
     private Order order;
     String shippingAddressRequired;
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
@@ -47,12 +50,13 @@ public class NewOrderServlet extends HttpServlet{
         session.setAttribute("order",order);
         if (shippingAddressRequired!=null){
             System.out.println("yes");
-            req.getRequestDispatcher(SHIPPINGFORM).forward(req,resp);
+            req.getRequestDispatcher(SHIPPINGFORM).forward(req, resp);
         }
         else{
             req.getRequestDispatcher(CONFIRMORDER).forward(req,resp);
         }
     }
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -88,10 +88,10 @@
 
   </table>
 
-  <a href="confirmOrder" class="Button">Confirm</a>
+  <a href="confirmOrder" class="Button" id="confirmButton">Confirm</a>
 
 </div>
-
+<div class="div3"></div>
 <%@ include file="../common/bottom.jsp"%>
 
 

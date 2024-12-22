@@ -41,7 +41,7 @@
                 ${cartItem.item.attribute5} ${cartItem.item.product.name}</td>
             <td>${cartItem.inStock}</td>
             <td>
-              <input type="text" name="${cartItem.item.itemId}" value="${cartItem.quantity}">
+              <input type="text" id='quantity' class="quantity" name="${cartItem.item.itemId}" value="${cartItem.quantity}" onblur="updateCartQuantity()">
             </td>
             <td><fmt:formatNumber value="${cartItem.item.listPrice}"
                                   pattern="$#,##0.00" /></td>
@@ -55,7 +55,7 @@
         <tr>
           <td colspan="7">
             Sub Total: <fmt:formatNumber value="${sessionScope.cart.subTotal}" pattern="$#,##0.00" />
-            <input type="submit" value="Update Cart">
+            <input type="submit" value="Update Cart" id="update" style="display: none">
           </td>
           <td>&nbsp;</td>
         </tr>
@@ -78,5 +78,5 @@
 
   <div id="Separator">&nbsp;</div>
 </div>
-
+<script src="js/cart-update.js"></script>
 <%@ include file="../common/bottom.jsp"%>

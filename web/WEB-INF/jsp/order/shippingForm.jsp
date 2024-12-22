@@ -41,7 +41,7 @@
             </tr>
 
         </table>
-        <input type="submit" name="newOrder" value="Continue"/>
+        <input type="submit" name="newOrder" id="confirmButton" value="Continue"/>
     </form>
 </div>
 
