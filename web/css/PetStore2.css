@@ -1,0 +1,172 @@
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+button.returnANDsubmit{
+    margin-bottom: 20px;
+    font-family: Microsoft YaHei;
+    height: 20px;
+    border: 1px solid rgb(0 ,0 ,0);
+    color: rgb(0, 0, 0);
+    background: rgb(255,251,240);
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+
+}
+button.remove{
+    margin-bottom: 20px;
+    font-family: Microsoft YaHei;
+    height: 20px;
+    border: 1px solid rgb(0 ,0 ,0);
+    color: rgb(0, 0, 0);
+    background: #ff461f;
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+button.returnANDsubmit:hover{
+    background: rgb(254,254,187);
+}
+button.remove:hover{
+    background: #ff3300;
+}
+.welcome{
+    margin-top: 200px;
+    border-radius :20px;  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome .enter{
+    display: flex;
+    flex-direction: column;
+
+}
+.welcome .enter >label{
+    margin: 0 auto;
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+}
+.welcome .enter .store{
+    font-size: 50px;
+    font-weight: 700;
+    color: #005e21;
+}
+
+.welcome .enter .button {
+    padding-top: 30px;
+    text-align: center;
+    color: #696969;
+
+}
+.welcome .enter .button > a > button{
+    font-family: Microsoft YaHei;
+    width: 120px;
+    height: 35px;
+    border: 1px solid rgb(161 ,216 ,230);
+    background: rgb(0, 47, 167);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.welcome .enter .button > a > button:hover{
+    border: 1px solid rgb(255 ,255 ,255);
+    background: rgb(161 ,216 ,230);
+}
+
+.top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid rgb(0,0,0);
+}
+.top .top-returnmain{
+    float: left;
+    padding-right:20px;
+}
+
+.top .top-returnmain >a{
+    font-size: 35px;
+    font-weight: 700;
+    color: rgb(0, 47, 167);
+}
+.top .top-account{
+    float: right;
+    display: flex;
+    flex-direction: row;
+
+}
+.top .top-account > div{
+    float:right;
+    margin-right: 10px;
+    padding-top: 18px;
+}
+.top .top-account > div > a{
+    color: #000;
+    transition: 0.2s;
+}
+.top .top-account > div > a:hover{
+    color: rgb(0, 47, 167);
+}
+.middle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+    width: 70%;
+    background-color: rgb(247 ,238, 214);
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+}
+
+.middle .SidebarContent{
+    border-radius :20px;  ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: 500px;
+    width: 230px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    background-color: aliceblue;
+    box-shadow: 1px 1px 5px #000;
+}
+.middle .SidebarContent .images > a > img{
+    width: 200px;
+    height: auto;
+}
+.middle .SidebarContent .h11{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.middle .SidebarContent .h22{
+    font-size: 15px;
+
+}
+.bottom{
+
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid rgb(0,0,0);
+    border-bottom: 2px solid rgb(0,0,0);
+}
+.bottom >div{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
