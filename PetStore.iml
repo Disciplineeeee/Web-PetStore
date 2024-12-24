@@ -38,5 +38,7 @@
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" name="jsp-api1" level="project" />
+    <orderEntry type="library" name="fastjson-1.2.50" level="project" />
   </component>
 </module>
