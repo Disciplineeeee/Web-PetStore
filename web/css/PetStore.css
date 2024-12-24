@@ -105,14 +105,6 @@ a.Button:hover {
     color: #000;
     background-color: #54c07a;
 }
-#image-info {
-    position: absolute;
-    background-color:white;
-    border: 1px solid gray;
-    padding: 10px;
-    z-index: 1;
-    left:65%;
-}
 #Logo {
     width: 33%;
     height: 9ex;
@@ -364,4 +356,17 @@ body>#Banner {
     color: #005e21;
     cursor: pointer;
 }
-
+#image-info {
+    position: absolute;
+    background-color:#ccc;
+    border: 1px solid #aaa;
+    padding: 10px;
+    z-index: 1;
+    left:65%;
+    color: #005e21;
+}
+#image-info1{
+    margin: 0;
+    padding: 0;
+    border: 1px solid #aaa;
+}

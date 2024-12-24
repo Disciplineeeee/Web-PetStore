@@ -24,15 +24,16 @@
     <table>
       <tr>
         <td>User ID:</td>
-        <td><input name="userid"></td>
+        <td><input name="userid" id="username"></td>
+        <td id="isExistInfo"></td>
       </tr>
       <tr>
         <td>New password:</td>
-        <td><input type="password" name="password"></td>
+        <td><input type="password" name="password" id="password"></td>
       </tr>
       <tr>
         <td>Repeat password:</td>
-        <td><input type="password" name="repeatedPassword"></td>
+        <td><input type="password" name="repeatedPassword" id="repeatpassword"></td>
       </tr>
     </table>
 
@@ -52,5 +53,5 @@
 
     <input type="submit" value="Save Account Information">
 </div>
-
+<script src="js/check-username.js"></script>
 <%@ include file="../common/bottom.jsp"%>

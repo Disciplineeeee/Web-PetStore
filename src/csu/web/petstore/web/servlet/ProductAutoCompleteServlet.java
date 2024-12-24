@@ -18,7 +18,6 @@ public class ProductAutoCompleteServlet extends HttpServlet {
         String keyword = req.getParameter("keyword");
         CatalogService service = new CatalogService();
         List<Product> productList = service.searchProductList(keyword);
-
         String result = JSON.toJSONString(productList);
         System.out.println(result);
 

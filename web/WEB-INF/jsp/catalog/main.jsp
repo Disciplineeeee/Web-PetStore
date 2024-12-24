@@ -45,7 +45,9 @@
             </div>
     </div>
     <div id="image-info" style="display: none">
+        <ul id="image-info1">
 
+        </ul>
     </div>
     <div id="Separator">&nbsp;</div>
 </div>

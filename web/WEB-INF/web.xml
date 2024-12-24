@@ -136,6 +136,10 @@
         <servlet-name>NewOrderPageServlet</servlet-name>
         <servlet-class>csu.web.petstore.web.servlet.NewOrderPageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsernameExistServlet</servlet-name>
+        <servlet-class>csu.web.petstore.web.servlet.UsernameExistServlet</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -269,5 +273,8 @@
         <servlet-name>NewOrderPageServlet</servlet-name>
         <url-pattern>/neworderpage</url-pattern>
     </servlet-mapping>
-
+    <servlet-mapping>
+        <servlet-name> UsernameExistServlet</servlet-name>
+        <url-pattern>/usernameExist</url-pattern>
+    </servlet-mapping>
 </web-app>

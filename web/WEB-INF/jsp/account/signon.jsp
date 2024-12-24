@@ -30,11 +30,12 @@
     <table>
       <tr>
         <td>Username:</td>
-        <td><input name="username" type="text" value="" /></td>
+        <td><input name="username" id="username" type="text" value="" /></td>
+        <td id="isExistInfo"></td>
       </tr>
       <tr>
         <td>Password:</td>
-        <td><input name="password" type="password" value="" /></td>
+        <td><input name="password" id="password" type="password" value="" /></td>
       </tr>
       <tr>
         <td>Verification code:</td>
@@ -52,5 +53,4 @@
   <a href="newAccountForm">Register Now!</a>
 
 </div>
-
 <%@ include file="../common/bottom.jsp"%>

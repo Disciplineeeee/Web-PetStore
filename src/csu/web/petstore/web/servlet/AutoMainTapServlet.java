@@ -18,7 +18,6 @@ public class AutoMainTapServlet extends HttpServlet {
         String keyword=req.getParameter("altText");
         CatalogService service = new CatalogService();
         List<Product> productList = service.getProductListByCategory(keyword);
-
         String result = JSON.toJSONString(productList);
         resp.setContentType("text/json");
         PrintWriter out = resp.getWriter();
